@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Projeto WEB</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'> 
+    <link rel="shortcut icon" href="shortcut_icon.png" text="image/x-icon"/>  
+</head>
+<body>
+
+<style>
+    *{
+    font-family: "Poiret One",cursive;
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+
+@font-face{
+    font-family: Poiret One;
+    src: url("PoiretOne-Regular.ttf");
+}
+
+
+/*Scroll*/
+::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-dark4);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-purple);
+}
+
+/*Cores*/
+:root{
+    --color-white: rgb(255, 255, 255);
+    --color-dark: rgb(0,0,0);
+    --color-dark1: rgb(20, 20, 20);
+    --color-dark2: rgb(30, 30, 30);
+    --color-dark3: rgb(40, 40, 40);
+    --color-dark4: rgb(50, 50, 50);
+    --color-dark5: rgb(60, 60, 60);
+    --color-purple: rgb(130, 0, 244);
+}
+
+
+body{
+    background-color: var(--color-dark3);
+}
+
+.name{
+    color:var(--color-white);
+    letter-spacing: 5px;
+    font-size: 25px;
+    text-shadow: 2px 2px 1px var(--color-purple);
+    cursor: default;
+}
+
+.header, .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center; /*como alinhar certo um cabeçalho */
+}
+
+.header{
+    background-color: var(--color-dark1);
+    box-shadow: 1px 1px 4px var(--color-dark2);
+    height: 5em;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.menu { 
+    gap:3em;
+    z-index: 2;
+    overflow:auto;
+    position:fixed;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--color-dark2);
+    width: 35vw;
+    height: 100vh;
+    padding: 1em;
+    animation-duration: 0.8s;
+    margin-left: -100vw;
+}
+
+a{
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 20px;
+    transition: 0.5s;
+    font-weight: bold;
+    border: solid 0.1px transparent;
+    letter-spacing: 3px;
+    border-radius: 5px;
+
+}
+
+button#header_main_btn{
+    padding-left: 10px;
+}
+
+
+.menu .hidden:hover, .navigation:hover{
+    border: solid var(--color-white) 0.1px; 
+    box-shadow: 0 0 0.1rem var(--color-white), 
+    0 0 0.1rem var(--color-white), 
+    0 0 0.5rem var(--color-purple), 
+    0 0 0.1rem var(--color-purple), 
+    0 0 0.5rem var(--color-purple), 
+    inset 0 0 0.1rem var(--color-purple);
+    border-radius: 5px;
+}
+
+.hidden_logo_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.title{
+    text-align: center;
+    padding: 20px;
+    font-size: xx-large;
+    letter-spacing: 10px;
+    color: var(--color-white);
+    text-shadow: 1px 1px 4px var(--color-purple);
+    cursor: default;
+    transition: 1s;
+    width: 320px;
+
+}
+
+.titlediv{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.title:hover{
+    letter-spacing: 15px;
+
+}
+
+.content {
+    height: 100vh;
+    transition: 1s;
+}
+
+
+.content p{
+    font-size: larger;
+    text-align: justify;
+    padding: 10px 70px;
+    line-height: 30px;
+    color: #fff;
+}
+
+
+.image{
+    height: 80%;
+    animation: changeBackground 30s infinite;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+    margin-bottom: 30px;
+    box-shadow: 0px 17px 20px 10px var(--color-dark2);
+}
+
+
+.btn_header{
+    display:block;
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor:pointer;
+}
+
+
+.menu h1{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 20%;
+}
+.icons svg{
+    background-color: var(--color-white);
+    border-radius:100% ;
+    padding: 30px;
+    color: var(--color-dark);
+    box-shadow: 0 0 0.5rem #6200ac,
+    0 0 0.5rem #6200ac,
+    0 0 0.5rem #6200ac, 
+    0 0 0.5rem #6200ac, 
+    0 0 0.5rem #6200ac, 
+    inset 0 0 0.3rem #6200ac;
+}
+
+.content .footer {
+    background-color: var(--color-dark1);
+    color: var(--color-white);
+    font-size: x-large;
+    line-height: 155%;
+    padding: 15px 45px 14px 45px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px -15px 14px var(--color-dark2);
+    margin-top: 40px;
+}
+
+
+
+/*Animações*/
+
+@keyframes showSidebar {
+    from {margin-left: -100vw;}
+    to {margin-left: -10vw;}
+}
+
+@keyframes changeBackground{
+    0%{
+        background-image: url(https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    25%{
+        background-image: url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    50%{
+        background-image: url(https://images.pexels.com/photos/911758/pexels-photo-911758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    75%{
+        background-image: url(https://images.pexels.com/photos/532568/pexels-photo-532568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    100%{
+        background-image: url(https://images.pexels.com/photos/443378/pexels-photo-443378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+}   
+     
+
+/*Responsividade*/
+
+@media screen and (max-width: 769px) {
+    .navigation{display: none;}
+    .header{justify-content: start;}
+    .icons{padding:5% 10% 5% 10%;}
+    .icons svg{padding:20px;}
+    .hidden_logo_div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hidden{padding: 5px;}
+}
+
+
+@media screen and (max-width: 806px) {
+    .name{
+        font-size: 17px;
+    }
+
+    .content p{
+        padding: 30px;
+        text-align: center;
+    }
+    .hidden{
+        padding: 10px;
+        text-align: center;
+    }
+    .menu{
+        width: 210px;
+    }
+    
+}*{
+    font-family: "Poiret One",cursive;
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+
+@font-face{
+    font-family: Poiret One;
+    src: url("PoiretOne-Regular.ttf");
+}
+
+
+/*Scroll*/
+::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-dark4);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-purple);
+}
+
+/*Cores*/
+:root{
+    --color-white: rgb(255, 255, 255);
+    --color-dark: rgb(0,0,0);
+    --color-dark1: rgb(20, 20, 20);
+    --color-dark2: rgb(30, 30, 30);
+    --color-dark3: rgb(40, 40, 40);
+    --color-dark4: rgb(50, 50, 50);
+    --color-dark5: rgb(60, 60, 60);
+    --color-purple: rgb(130, 0, 244);
+}
+
+
+body{
+    background-color: var(--color-dark3);
+}
+
+.name{
+    color:var(--color-white);
+    letter-spacing: 5px;
+    font-size: 25px;
+    text-shadow: 2px 2px 1px var(--color-purple);
+    cursor: default;
+}
+
+.header, .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center; /*como alinhar certo um cabeçalho */
+}
+
+.header{
+    background-color: var(--color-dark1);
+    box-shadow: 1px 1px 4px var(--color-dark2);
+    height: 5em;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.menu { 
+    gap:3em;
+    z-index: 2;
+    overflow:auto;
+    position:fixed;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--color-dark2);
+    width: 35vw;
+    height: 100vh;
+    padding: 1em;
+    animation-duration: 0.8s;
+    margin-left: -100vw;
+}
+
+a{
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 20px;
+    transition: 0.5s;
+    font-weight: bold;
+    border: solid 0.1px transparent;
+    letter-spacing: 3px;
+    border-radius: 5px;
+
+}
+
+button#header_main_btn{
+    padding-left: 10px;
+}
+
+
+.menu .hidden:hover, .navigation:hover{
+    border: solid var(--color-white) 0.1px; 
+    box-shadow: 0 0 0.1rem var(--color-white), 
+    0 0 0.1rem var(--color-white), 
+    0 0 0.5rem var(--color-purple), 
+    0 0 0.1rem var(--color-purple), 
+    0 0 0.5rem var(--color-purple), 
+    inset 0 0 0.1rem var(--color-purple);
+    border-radius: 5px;
+}
+
+.hidden_logo_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.title{
+    text-align: center;
+    padding: 20px;
+    font-size: xx-large;
+    letter-spacing: 10px;
+    color: var(--color-white);
+    text-shadow: 1px 1px 4px var(--color-purple);
+    cursor: default;
+    transition: 1s;
+    width: 320px;
+
+}
+
+.titlediv{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.title:hover{
+    letter-spacing: 15px;
+
+}
+
+.content {
+    height: 100vh;
+    transition: 1s;
+}
+
+
+.content p{
+    font-size: larger;
+    text-align: justify;
+    padding: 10px 70px;
+    line-height: 30px;
+    color: #fff;
+}
+
+
+.image{
+    height: 80%;
+    animation: changeBackground 30s infinite;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+    margin-bottom: 30px;
+    box-shadow: 0px 17px 20px 10px var(--color-dark2);
+}
+
+
+.btn_header{
+    display:block;
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor:pointer;
+}
+
+
+.menu h1{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 20%;
+}
+.icons svg{
+    background-color: var(--color-white);
+    border-radius:100% ;
+    padding: 30px;
+    color: var(--color-dark);
+    box-shadow: 0 0 0.5rem #6200ac,
+    0 0 0.5rem #6200ac,
+    0 0 0.5rem #6200ac, 
+    0 0 0.5rem #6200ac, 
+    0 0 0.5rem #6200ac, 
+    inset 0 0 0.3rem #6200ac;
+}
+
+.content .footer {
+    background-color: var(--color-dark1);
+    color: var(--color-white);
+    font-size: x-large;
+    line-height: 155%;
+    padding: 15px 45px 14px 45px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px -15px 14px var(--color-dark2);
+    margin-top: 40px;
+}
+
+
+
+/*Animações*/
+
+@keyframes showSidebar {
+    from {margin-left: -100vw;}
+    to {margin-left: -10vw;}
+}
+
+@keyframes changeBackground{
+    0%{
+        background-image: url(https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    25%{
+        background-image: url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    50%{
+        background-image: url(https://images.pexels.com/photos/911758/pexels-photo-911758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    75%{
+        background-image: url(https://images.pexels.com/photos/532568/pexels-photo-532568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    100%{
+        background-image: url(https://images.pexels.com/photos/443378/pexels-photo-443378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+}   
+     
+
+/*Responsividade*/
+
+@media screen and (max-width: 769px) {
+    .navigation{display: none;}
+    .header{justify-content: start;}
+    .icons{padding:5% 10% 5% 10%;}
+    .icons svg{padding:20px;}
+    .hidden_logo_div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hidden{padding: 5px;}
+}
+
+
+@media screen and (max-width: 806px) {
+    .name{
+        font-size: 17px;
+    }
+
+    .content p{
+        padding: 30px;
+        text-align: center;
+    }
+    .hidden{
+        padding: 10px;
+        text-align: center;
+    }
+    .menu{
+        width: 210px;
+    }
+    
+}
+</style>
+
+<!-- Cabeçalho do site -->
+<header class="header" id="header">
+    <h1 class="name" id="name" onclick= "closeSidebar()">NOME DA EMPRESA</h1>
+    <a class= "navigation" id="navigation1" href="#div1">Sobre Nós</a>
+    <a class= "navigation" id="navigation2" href="#div2">História</a>
+    <a class= "navigation" id="navigation3" href="#div3">Trabalhos</a> 
+    <!--Menu do site -->
+    <div class="menu" id="menu">
+        <button onclick="toggleSidebar()"  class="btn_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+        </button>
+        <a class="hidden" href="">Unidades</a>
+        <a class="hidden" href="">Trabalhe Conosco</a>
+        <div class="hidden_logo_div">    
+            <a class="hidden_logo" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                </svg>
+            </a>
+            <a class="hidden_logo" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+            </a>
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+            </a> 
+        </div>
+    </div>
+    <button onclick="toggleSidebar()" class="btn_header" id="header_main_btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </button>
+</header>
+<!-- Conteudo do Site -->
+<div onclick= "closeSidebar()" class="content" id="content">
+    <div class="image"></div>
+    <div id="div1">
+        <div class="titlediv">
+            <h2 class="title"><b>SOBRE NÓS</b></h2>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor neque varius, suscipit quam eget, ullamcorper leo. Nulla blandit risus non velit blandit tristique. Praesent interdum pretium erat, commodo auctor ligula facilisis a. Sed iaculis pretium vestibulum. Nulla dapibus tortor ut tempus pretium. Integer quis ex ac risus consectetur lacinia. Sed a pharetra erat, in bibendum augue. Duis laoreet arcu in diam mattis rhoncus. Aliquam non lacinia augue. Praesent in orci vel est finibus aliquet. Nullam quis dolor ornare, pulvinar urna at, pulvinar libero. Nunc ligula orci, aliquet ac nisl euismod, facilisis venenatis magna. Aenean iaculis dui eget massa rutrum malesuada. Ut mi quam, malesuada at euismod non, ornare eu ex. Donec rhoncus est ac turpis eleifend, ac tempor magna hendrerit. Pellentesque venenatis purus non dictum luctus.
+        </p>
+        <p>
+            Cras pretium non sem at tristique. Sed leo quam, fermentum vulputate purus a, rhoncus mollis est. Vivamus vel porta libero. Duis aliquam lorem neque, vitae finibus nulla iaculis at. Proin vulputate, ex bibendum facilisis vestibulum, enim massa finibus ipsum, nec semper nulla dui sed ex. Curabitur nec lacus non libero maximus porttitor. Praesent purus felis, consequat ut est sit amet, porttitor congue augue. Nam aliquam elit massa, convallis ornare ex sodales vitae. Pellentesque aliquet sit amet ipsum eget consectetur. Vivamus euismod ullamcorper neque, nec porttitor ipsum hendrerit vitae.
+        </p>
+    </div>
+
+    <div id="div2">
+        <div class="titlediv">
+            <h2 class="title"><b>HISTÓRIA</b></h2>
+        </div>        
+        <p>
+            Phasellus efficitur, ligula in semper semper, ex massa ullamcorper lorem, id fermentum magna erat faucibus velit. Quisque in aliquet orci, a pulvinar risus. Nullam a leo id lorem mattis fermentum. Sed eget ultricies odio. Nunc egestas commodo tellus, vel commodo nibh maximus vel. Cras eget magna non dui venenatis varius et nec tellus. Suspendisse et turpis ipsum. Sed nec enim ac tortor ornare dignissim.
+        </p>
+        <p>
+            Etiam feugiat, nulla sit amet porttitor vestibulum, mi justo faucibus lectus, sit amet laoreet odio dui ac purus. Maecenas nec lacus magna. Nam volutpat sagittis gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus fermentum bibendum facilisis. Vestibulum velit sapien, pulvinar et quam eu, maximus elementum nibh. Nam justo nulla, molestie vitae feugiat non, vestibulum nec metus. Aliquam cursus, felis vel congue malesuada, justo tortor ultrices lacus, vel mattis justo tellus eu ex.
+        </p>
+        <p>
+            Curabitur commodo at libero maximus aliquam. Aenean varius rutrum feugiat. Pellentesque tortor lectus, condimentum quis nisi dignissim, fermentum faucibus lorem. Morbi tempor placerat erat non efficitur. Aenean faucibus, metus egestas maximus vestibulum, turpis arcu placerat erat, quis molestie justo lacus nec ante. In vestibulum, lorem id posuere posuere, tortor nulla iaculis lorem, a pharetra erat quam quis elit. Quisque a faucibus turpis. Pellentesque eget sodales magna, nec ultrices dolor.
+        </p>
+        <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In aliquam, sapien ac dapibus ultricies, neque odio aliquet libero, ac finibus diam quam sed metus. Curabitur semper tellus eget mattis gravida. Ut ultrices purus in massa mattis suscipit. Proin ex orci, facilisis at accumsan et, efficitur quis est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum purus eget justo interdum elementum. Suspendisse tempor felis nec mauris aliquam facilisis. Donec iaculis rutrum dignissim. Nunc in posuere mauris. Sed rhoncus lacus facilisis elit pulvinar, vitae finibus massa facilisis.
+        </p>
+        <p>
+            Proin accumsan, nulla in convallis rhoncus, mi purus fermentum eros, et eleifend lorem neque non massa. Donec sodales arcu nec eros lobortis, ac maximus ante ullamcorper. Quisque suscipit mauris at lectus tempor tempus. Vivamus accumsan tortor nec sem sollicitudin aliquam. Morbi eu tellus accumsan, venenatis justo sed, condimentum neque. Aliquam erat volutpat. Integer rhoncus eleifend nisi et varius. Donec fermentum, erat non aliquam rhoncus, magna magna aliquam mauris, a elementum ex libero id tortor.
+        </p>
+        <p>
+            Vestibulum non nisl neque. Phasellus sed felis ut sapien porta consequat. Donec imperdiet ante vitae nunc ultricies mollis. Pellentesque sem ipsum, ultrices sit amet arcu nec, mattis fringilla massa. Nunc dui quam, fermentum vel sem quis, vehicula rutrum ipsum. Curabitur id dignissim elit, non feugiat turpis. Nullam suscipit metus sapien, consequat rutrum urna luctus nec. Vivamus nec sollicitudin quam, sit amet pharetra erat. Morbi interdum eget purus vitae venenatis. Aenean condimentum dui a maximus dapibus. Ut et bibendum nulla, non posuere sapien. Quisque tempor ipsum sed rutrum ultrices. Suspendisse consectetur augue ultricies, egestas nibh vel, pellentesque tortor. Quisque venenatis sapien leo, ac ornare ligula sollicitudin imperdiet. Quisque est nibh, feugiat blandit congue ac, posuere nec erat.
+        </p>
+        <p>
+            Sed condimentum felis sed molestie cursus. Donec tempor viverra sapien, laoreet rhoncus nisi ullamcorper in. Integer eleifend rutrum elementum. Nam lacinia lacus metus, vel vehicula nunc euismod nec. Donec in justo sollicitudin, vulputate est sit amet, suscipit ex. Integer fringilla sem diam. Vestibulum aliquet sagittis orci. Pellentesque et scelerisque ligula.
+        </p>
+    </div>
+    <div id="div3">
+        <div class="titlediv">
+            <h2 class="title"><b>TRABALHOS</b></h2>
+        </div>
+        <p>
+            Sed condimentum malesuada congue. Donec facilisis urna in tortor feugiat pharetra nec sed ligula. Maecenas at diam in est rhoncus lacinia sed id nunc. Integer orci quam, fringilla vitae dolor vel, venenatis porta nunc. Fusce congue mi enim, vitae efficitur leo facilisis in. In sit amet sapien ultrices, lobortis nisi at, suscipit augue. Duis efficitur tellus nec posuere accumsan. Mauris accumsan feugiat nunc ut commodo. Aliquam blandit elit at dolor eleifend vestibulum. Nunc nec sapien at dui ullamcorper condimentum. Fusce gravida eget nunc in sodales. Integer ut feugiat justo. Maecenas tempus risus vitae eleifend ullamcorper. Suspendisse sem nulla, egestas vel orci pellentesque, scelerisque porta felis. Praesent aliquam, lacus eu mattis malesuada, nibh ex porta lectus, a facilisis metus enim at tellus.
+        </p>   
+        <div id="icons" class="icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
+                <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>  
+            </svg>
+                
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-bank2" viewBox="0 0 16 16">
+                <path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+              </svg>
+        </div>
+        <p>
+            Morbi ac arcu a velit mollis volutpat nec non est. Mauris ac lobortis erat, sed egestas ante. Vivamus eu orci a lacus aliquam mattis. Aliquam erat volutpat. Fusce ipsum purus, condimentum in finibus placerat, porttitor non nulla. Proin dignissim elit et pellentesque viverra. Mauris elementum aliquam nisl, nec semper justo posuere et. Donec viverra mi at tortor eleifend maximus. Aenean eleifend vehicula pharetra. Nulla egestas leo quis eleifend congue. Suspendisse at diam sed massa vulputate fringilla id sit amet nunc. Nullam porttitor leo neque, eu interdum erat euismod nec. Sed venenatis quis purus vel condimentum. Mauris blandit odio non velit ornare, ullamcorper fermentum odio sagittis. Etiam id consectetur urna. Donec faucibus imperdiet tellus, id aliquet lacus. Morbi enim diam, commodo sed leo vel, laoreet porttitor metus. Ut varius eleifend quam. Integer faucibus diam ac libero dapibus eleifend. Vivamus sollicitudin urna in tortor consectetur ultricies. In euismod risus a faucibus vulputate. Duis gravida a arcu eget consectetur. Sed et sapien sapien. Curabitur vel arcu efficitur, malesuada neque ac, varius mauris. Nulla quis eros tortor. Integer varius vestibulum neque, nec porta erat elementum vitae. Morbi non odio ut velit varius bibendum vel vel magna. Sed id elit nec odio facilisis vehicula. Pellentesque molestie sollicitudin ex vel condimentum. Nulla facilisi. Etiam vel dui ac leo pellentesque posuere. Aliquam at scelerisque risus. Quisque egestas tortor sed libero pharetra, a ultricies magna molestie. Praesent vitae ante imperdiet, condimentum purus eget, dictum leo. Donec lobortis fermentum lobortis. Ut fringilla facilisis est vel dignissim. Ut tempor sapien sed leo blandit congue. Mauris blandit nec mi at condimentum.
+        </p>
+    </div>
+    <!--Rodapé do site-->
+    <footer id="footer" class="footer">
+        <p>
+            &copy; Rafael Kuniyoshi <br>
+            <i>Janeiro de 2023</i>
+        </p>
+    </footer>
+</div>
+</body>
+
+<script>
+var header=document.getElementById('header');
+var menu = document.getElementById('menu');
+var content= document.getElementById('content');
+var img = document.getElementById('example_image');
+var nome = document.getElementById('name');
+var nav1 = document.getElementById('navigation1');
+var nav2 = document.getElementById('navigation2');
+var nav3 = document.getElementById('navigation3');
+var headerbtn = document.getElementById('header_main_btn')
+var showSidebar = false;
+
+function toggleSidebar(){
+    showSidebar = !showSidebar;
+    if(showSidebar)
+    {
+        menu.style.marginLeft ='-10vw';
+        menu.style.animationName ='showSidebar';
+        content.style.filter='blur(2px)';
+        content.style.cursor='default';
+        nome.style.filter='blur(2px)';
+        nav1.style.filter='blur(2px)';
+        nav1.style.pointerEvents="none";
+        nav2.style.filter='blur(2px)';
+        nav2.style.pointerEvents="none";
+        nav3.style.filter='blur(2px)';
+        nav3.style.pointerEvents="none";
+        headerbtn.style.filter='blur(2px)';
+    }
+    else
+    {
+        menu.style.animationName ='';
+        menu.style.marginLeft ='-100vw';
+        content.style.filter='blur(0px)';
+        content.style.cursor='auto';
+        nome.style.filter='blur(0px)';
+        nav1.style.filter='blur(0px)';
+        nav1.style.pointerEvents="all";
+        nav2.style.filter='blur(0px)';
+        nav2.style.pointerEvents="all";
+        nav3.style.filter='blur(0px)';
+        nav3.style.pointerEvents="all";
+        headerbtn.style.filter='blur(0px)';
+    }
+}
+
+function closeSidebar()
+{
+    if(showSidebar)
+    {
+        toggleSidebar();
+    }
+}
+</script>
+</html>
