@@ -11,7 +11,7 @@ Ao clicarmos no botão, somos apresentados ao menu lateral. Diferentemente dos b
 
 
 # Status
-Incompleto
+Completo
 
 # Link das fontes, imagens e icones utilizadas
 https://fonts.google.com/specimen/Poiret+One?preview.text=NOME%20DA%20EMPRESA%20opa%20legal&preview.text_type=custom&category=Display
