@@ -1,0 +1,312 @@
+*{
+    font-family: "Poiret One",cursive;
+    margin: 0;
+    padding: 0;
+
+}
+
+html{
+    scroll-behavior: smooth;  
+}
+
+@font-face{
+    font-family: Poiret One;
+    src: url("./../materials/PoiretOne-Regular.ttf");
+}
+
+/*Scroll*/
+::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-dark4);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+}
+
+
+:root{
+    --color-white: #ffffff;
+    --color-dark: #000000;
+    --color-dark1: #141414;
+    --color-dark2: #1e1e1e;
+    --color-dark3: #282828;
+    --color-dark4: #323232;
+    --color-dark5: #3c3c3c;
+    --color-main: #d28100;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+  .header{
+    background-color: var(--color-dark1);
+    box-shadow: 1px 1px 4px var(--color-dark2);
+    height: 6em;
+    justify-content: space-between;
+    padding: 0 10%;
+    /* position: fixed; */
+    width: 80%;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cd p,.vinil p, a{
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 20px;
+    transition: 0.5s;
+    font-weight: bold;
+    border: solid 0.1px transparent;
+    letter-spacing: 3px;
+    border-radius: 5px;
+
+}
+
+body{
+    background-color: var(--color-dark3);
+    
+}
+
+main{
+    width: 80%;
+}
+
+.name{
+    color:var(--color-white);
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px var(--color-main);
+    cursor: default;
+}
+  
+  form input[type="search"] {
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  form button[type="submit"] {
+    padding: 5px 10px;
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  img{
+    transition: 0.5s;
+  }
+  .cds-article img,article.internacionais img{
+    width: 60%;
+    height: 60%;
+    margin-right: 10%;
+    
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  nav ul li.cd:hover .submenu,
+  nav ul li.vinil:hover .submenu {
+    display: block;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:var(--color-main);
+    padding: 10px;
+  }
+  
+  .submenu li {
+    margin: 5px 0;
+  }
+  
+  .submenu li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .container.conteudo {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  section.destaque {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  article.internacionais {
+    margin-bottom: 20px;
+  }
+  
+  
+  article.internacionais h3 {
+    font-size: 18px;
+    text-shadow: 1px 1px 1px var(--color-dark);
+  }
+  
+  article.internacionais span {
+    font-size: 14px;
+  }
+  
+  section.ultimos-lancamentos {
+    flex: 1;
+  }
+  
+  section.ultimos-lancamentos h2 {
+    font-size: 24px;
+    color: var(--color-white);
+    padding: 10px;
+    margin: 30px 0 30px 0;
+    text-align: center;
+    background-color: var(--color-main);
+    width: 90%;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+  }
+  
+  section.ultimos-lancamentos .novidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  article.ultimos-lancamentos {
+    width: 45%;
+  }
+  
+  aside {
+    flex: 1;
+    padding: 25px;
+    justify-content: center;
+    display: flex;
+    background-image: linear-gradient(to left top, #c14f00, #c65c00, #ca6900, #ce7500, #d28100);
+    text-align: center;
+    border-radius: 5px;
+}
+  
+  section.vinis h2 {
+    font-size: 28px;
+    text-align: center;
+    color: var(--color-white);
+    border-radius: 5px;
+    background-color: var(--color-dark);
+    padding: 5px;
+  }
+  
+  
+  article.vinis h3 {
+    font-size: 18px;
+  }
+  
+  footer {
+    background-color: var(--color-main);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navigation:hover{
+    border: solid var(--color-white) 0.1px; 
+    box-shadow: 0 0 0.1rem var(--color-white), 
+    0 0 0.1rem var(--color-white), 
+    0 0 0.5rem var(--color-main), 
+    0 0 0.1rem var(--color-main), 
+    0 0 0.5rem var(--color-main), 
+    inset 0 0 0.1rem var(--color-main);
+    border-radius: 5px;
+  }
+
+  img:hover{
+    transform: scale(1.01);
+  }
+
+  
+/* Estilos para dispositivos menores */
+@media screen and (max-width: 768px) {
+    .container.conteudo {
+      align-items: center; /* Centraliza o conteúdo verticalmente */
+    }
+  
+    section.destaque {
+      margin-right: 0; /* Remove a margem direita */
+      margin-bottom: 20px; /* Adiciona um espaçamento entre as seções */
+    }
+  
+    article.internacionais img,
+    article.ultimos-lancamentos img,
+    article.vinis img, .cds-article img {
+      width: 100%; /* As imagens ocuparão toda a largura disponível */
+      height: auto;
+    }
+  
+    aside {
+      margin-left: 0; /* Remove a margem esquerda */
+      margin-top: 20px; /* Adiciona um espaçamento entre as seções */
+    }
+
+    section.ultimos-lancamentos .novidades {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Ajuste de fonte para dispositivos menores, se necessário */
+    /* Exemplo: 
+    section.ultimos-lancamentos h2 {
+      font-size: 20px;
+    }
+    article.internacionais h3 {
+      font-size: 16px;
+    }
+    */
+    aside{
+        display: none;
+    }
+
+    .header{
+        background-color: var(--color-dark1);
+        box-shadow: 1px 1px 4px var(--color-dark2);
+        height: 25em;
+        justify-content: space-between;
+        padding: 35px 10%;
+        /* position: fixed; */
+        width: 80%;
+        color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu{
+        text-align: center  ;
+    }
+    h3{
+        text-align: center;
+    }
+  }

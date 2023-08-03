@@ -1,0 +1,308 @@
+*{
+    font-family: "Poiret One",cursive;
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+
+@font-face{
+    font-family: Poiret One;
+    src: url("./../materials/PoiretOne-Regular.ttf");
+}
+
+
+/*Scroll*/
+::-webkit-scrollbar-track {
+    background-color: var(--color-white);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-dark4);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+}
+
+/*Cores*/
+:root{
+    --color-white: #ffffff;
+    --color-dark: #000000;
+    --color-dark1: #141414;
+    --color-dark2: #1e1e1e;
+    --color-dark3: #282828;
+    --color-dark4: #323232;
+    --color-dark5: #3c3c3c;
+    --color-main: #d28100;
+}
+
+
+body{
+    background-color: var(--color-dark3);
+}
+
+.name{
+    color:var(--color-white);
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px var(--color-main);
+    cursor: default;
+}
+
+strong{
+    text-shadow: 1px 1px 12px var(--color-main);
+}
+
+.header, .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center; /*como alinhar certo um cabeçalho */
+}
+
+.header{
+    background-color: var(--color-dark1);
+    box-shadow: 1px 1px 4px var(--color-dark2);
+    height: 6em;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: fixed;
+    width: 80%;
+}
+
+.espaço{
+    margin-top: 30px;
+}
+
+.menu { 
+    gap:6em;
+    z-index: 2;
+    overflow:auto;
+    position:fixed;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--color-dark2);
+    width: 20vw;
+    height: 100vh;
+    padding: 1em;
+    animation-duration: 0.8s;
+    margin-left: -100vw;
+}
+
+a{
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 20px;
+    transition: 0.5s;
+    font-weight: bold;
+    border: solid 0.1px transparent;
+    letter-spacing: 3px;
+    border-radius: 5px;
+
+}
+
+button#header_main_btn{
+    padding-left: 10px;
+}
+
+
+.menu .hidden:hover, .navigation:hover, .hidden_responsive:hover{
+    border: solid var(--color-white) 0.1px; 
+    box-shadow: 0 0 0.1rem var(--color-white), 
+    0 0 0.1rem var(--color-white), 
+    0 0 0.5rem var(--color-main), 
+    0 0 0.1rem var(--color-main), 
+    0 0 0.5rem var(--color-main), 
+    inset 0 0 0.1rem var(--color-main);
+    border-radius: 5px;
+}
+
+.hidden_logo_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.title{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: var(--color-white);
+    text-shadow: 1px 1px 4px var(--color-main);
+    cursor: default;
+    transition: 1s;
+    width: 320px;
+
+}
+
+.titlediv{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.title:hover{
+    letter-spacing: 15px;
+
+}
+
+.content {
+    height: 100vh;
+    transition: 1s;
+}
+
+
+.content p{
+    font-size: 25px;
+    text-align: justify;
+    padding: 10px 70px;
+    line-height: 30px;
+    color: #fff;
+}
+
+
+.image{
+    height: 50%;
+    animation: changeBackground 23s infinite;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    background-position:bottom;
+    margin-bottom: 30px;
+    box-shadow: 0px 17px 20px 10px var(--color-dark2);
+}
+
+.btn_header{
+    display:block;
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor:pointer;
+}
+
+
+.menu h1{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 20%;
+}
+.icons svg{
+    background-color: var(--color-white);
+    border-radius:100% ;
+    padding: 30px;
+    color: var(--color-dark);
+    box-shadow: 0 0 0.5rem var(--color-main),
+    0 0 0.5rem var(--color-main),
+    0 0 0.5rem var(--color-main), 
+    0 0 0.5rem var(--color-main), 
+    0 0 0.5rem var(--color-main), 
+    inset 0 0 0.3rem var(--color-main);
+}
+
+.content .footer {
+    background-color: var(--color-dark1);
+    color: var(--color-white);
+    font-size: x-large;
+    line-height: 155%;
+    padding: 15px 45px 14px 45px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px -15px 14px var(--color-dark2);
+    margin-top: 40px;
+}
+
+
+.hidden_logo:hover{
+    transform: scale(1.5);
+}
+
+
+/*Animações*/
+
+@keyframes showSidebar {
+    from {margin-left: -100vw;}
+    to {margin-left: -10vw;}
+}
+
+@keyframes changeBackground{
+    0%{
+        background-image: url(https://images.pexels.com/photos/6865910/pexels-photo-6865910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    25%{
+        background-image: url(https://images.pexels.com/photos/11254999/pexels-photo-11254999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    50%{
+        background-image: url(https://images.pexels.com/photos/14577621/pexels-photo-14577621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    75%{
+        background-image: url(https://images.pexels.com/photos/2563017/pexels-photo-2563017.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+    100%{
+        background-image: url(https://images.pexels.com/photos/6865910/pexels-photo-6865910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    }
+}   
+     
+
+/*Responsividade*/
+
+@media screen and (max-width: 769px) {
+    .navigation{display: none;}
+    .header{justify-content: start;}
+    .icons{padding:5% 10% 5% 10%;}
+    .icons svg{padding:20px;}
+    .hidden_logo_div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hidden{padding: 5px;}
+    .hidden_responsive{display: block;}
+}
+
+
+@media screen and (max-width: 806px) {
+    .name{
+        font-size: 17px;
+    }
+
+    .content p{
+        padding: 30px;
+        text-align: center;
+    }
+    .hidden{
+        padding: 10px;
+        text-align: center;
+    
+    }
+    .menu{
+        width: 210px;
+        gap: 2em;
+    }
+    
+}
+
+@media screen and (max-width: 1065px) {
+    .hidden{
+        padding: 5px;
+        font-size: 15px;
+    }
+    .menu{
+        width: 230px;
+    }
+}
